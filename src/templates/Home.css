@@ -1,0 +1,39 @@
+.header {
+    background-color: skyblue;
+    margin: 0px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    height: 5vh;
+}
+
+.header-title {
+    flex-grow: 1;
+}
+
+.main-content {
+    display: flex;
+    background-color: springgreen;
+    padding: 12px;
+}
+
+.user-form {
+    background-color: red;
+    flex-grow: 1;
+}
+
+.vert-div {
+    margin: 12px;
+    height: 90vh;
+    border: 0.5px solid skyblue;
+    opacity: 0.5;
+}
+
+.results {
+    background-color: blue;
+    flex-grow: 1;
+}
+
+.btn {
+    justify-self: center;
+}
