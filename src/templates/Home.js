@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Home.css';
 
 function Home() {
+    useEffect(() => {
+    }, []);
+
     return (
         <div>
             <div className="header">
@@ -11,13 +14,13 @@ function Home() {
 
             <div className="main-content">
                 <div className="user-form">
-                    <button className="btn">Blah</button>
+                    <h2>Search Criteria</h2>
                 </div>
 
                 <div className="vert-div"></div>
 
                 <div className="results">
-                    <button>Blah</button>
+                    <h2>Results</h2>
                 </div>
             </div>  
         </div>

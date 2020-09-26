@@ -13,27 +13,35 @@
 
 .main-content {
     display: flex;
-    background-color: springgreen;
+    /* background-color: springgreen; */
     padding: 12px;
+    justify-content: center;
+    align-items: center;
 }
 
 .user-form {
-    background-color: red;
-    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    height: 80vh;
+    width: 50vw;
 }
 
 .vert-div {
-    margin: 12px;
-    height: 90vh;
+    margin: 60px;
     border: 0.5px solid skyblue;
     opacity: 0.5;
+    height: 65vh;
 }
 
 .results {
-    background-color: blue;
-    flex-grow: 1;
-}
-
-.btn {
-    justify-self: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    height: 80vh;
+    width: 50vw;
 }
