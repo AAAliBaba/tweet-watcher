@@ -1,19 +1,20 @@
-const express = require('express'),
-http = require('http');
- 
-const hostname = 'localhost';
-const port = 8080;
+const dotenv = require('dotenv');
+dotenv.config();
+
+var Twitter = require('twitter');
+var client = new Twitter({
+  consumer_key: process.env.API_KEY,
+  consumer_secret: process.env.API_SECRET,
+  bearer_token: process.env.BEARER
+})
+
+const express = require('express');
 const app = express();
  
-app.use((req, res) => {
-  console.log(req.headers);
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/html');
-  res.end('<html><body><h1>This is a test server</h1></body></html>');
- 
+app.use('/search', (req, res) => {
+  client.get('search/tweets.json', {q: "aaalibabatest"}, (error, tweets, response) => {
+    res.send(response);
+  })
 });
-const sample_server = http.createServer(app);
- 
-sample_server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+
+app.listen(9000);
