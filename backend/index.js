@@ -1,20 +1,45 @@
-const dotenv = require('dotenv');
-dotenv.config();
+const dotenv = require('dotenv')
+dotenv.config()
 
-var Twitter = require('twitter');
-var client = new Twitter({
+const express = require('express')
+const http = require('http')
+const socketIO = require('socket.io')
+const Twitter = require('node-tweet-stream')
+
+const app = express()
+const server = http.createServer(app)
+
+const io = socketIO(server)
+
+var tweet_stream = new Twitter({
   consumer_key: process.env.API_KEY,
   consumer_secret: process.env.API_SECRET,
-  bearer_token: process.env.BEARER
+  token: process.env.TOKEN,
+  token_secret: process.env.TOKEN_SECRET
 })
 
-const express = require('express');
-const app = express();
- 
-app.use('/search', (req, res) => {
-  client.get('search/tweets.json', {q: "aaalibabatest"}, (error, tweets, response) => {
-    res.send(response);
+io.on('connection', socket => {
+  console.log('User connected')
+  
+  tweet_stream.track('aaalibabatest')
+  tweet_stream.on('tweet', tweet => {
+    socket.emit('quicktest', tweet)
   })
-});
 
-app.listen(9000);
+  socket.on('quicktest', (res) => {
+    console.log(res)
+    io.sockets.emit('quicktest', "hello from server")
+  })
+
+  socket.on('disconnect', () => {
+    console.log('User disconnected...')
+  })
+})
+
+app.use('/', (req, res) => {
+  res.send("Tweet-Watcher Server")
+})
+
+server.listen(9000, () => {
+  console.log("Listening on port 9000...")
+})
