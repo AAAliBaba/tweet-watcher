@@ -1,18 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import socketIOClient from 'socket.io-client'
 import './Home.css'
+import TweetModel from '../models/TweetModel'
+import Tweet from '../components/Tweet'
+import { render } from 'react-dom'
 
-function Home() {
-    const ENDPOINT = 'localhost:9000'
-
-    useEffect(() => {
-    }, [])
-
-    const socket = socketIOClient(ENDPOINT)
-    socket.on('quicktest', (arg) => {
-        console.log(arg)
-    })
-
+function Home(props) {
     return (
         <div>
             <div className="header">
@@ -23,13 +16,16 @@ function Home() {
             <div className="main-content">
                 <div className="user-form">
                     <h2>Search Criteria</h2>
-                    <button onClick={() => {socket.emit('quicktest', "hello from client")}}>Test Socket</button>
+                    {/* <button onClick={() => {socket.emit('quicktest', "hello from client")}}>Test Socket</button> */}
                 </div>
 
                 <div className="vert-div"></div>
 
-                <div className="results">
+                <div id="div-results" className="results">
                     <h2>Results</h2>
+                    {props.tweetList.map((t) => {
+                        return <Tweet tweet={t}></Tweet>
+                    })}
                 </div>
             </div>  
         </div>

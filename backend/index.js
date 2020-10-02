@@ -1,3 +1,4 @@
+//use .env file
 const dotenv = require('dotenv')
 dotenv.config()
 
@@ -21,6 +22,9 @@ var tweet_stream = new Twitter({
 io.on('connection', socket => {
   console.log('User connected')
   
+  /*
+    code here that changes what to track and untrack
+  */
   tweet_stream.track('aaalibabatest')
   tweet_stream.on('tweet', tweet => {
     socket.emit('quicktest', tweet)
