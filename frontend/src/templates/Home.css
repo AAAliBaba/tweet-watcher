@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .header {
     background-color: skyblue;
     margin: 0px;
@@ -19,7 +24,7 @@
     align-items: center;
 }
 
-.user-form {
+.user-form, .results {
     display: flex;
     justify-content: center;
     border-radius: 10px;
@@ -36,7 +41,7 @@
     height: 65vh;
 }
 
-.results {
+/* .results {
     display: flex;
     justify-content: center;
     border-radius: 10px;
@@ -44,4 +49,17 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     height: 80vh;
     width: 50vw;
+} */
+
+.tweet {
+    background-color: springgreen;
+}
+
+.list {
+    background-color: steelblue;
+    flex-grow: 1;
+}
+
+.title {
+    text-align: center;
 }
