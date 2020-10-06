@@ -52,14 +52,32 @@
 } */
 
 .tweet {
-    background-color: springgreen;
+    /* background-color: springgreen; */
 }
 
 .list {
-    background-color: steelblue;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    /* background-color: springgreen; */
 }
 
 .title {
     text-align: center;
+    margin: 10px;
 }
+
+.form {
+    display: flex;
+    align-self: center;
+}
+
+.track-input {
+    border: none;
+    border-bottom: 1px solid skyblue;
+    background-color: transparent;
+}
+
+.track-input:focus {
+    border: none;
+} 
