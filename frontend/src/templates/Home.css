@@ -70,14 +70,42 @@
 .form {
     display: flex;
     align-self: center;
+    /* background-color: springgreen; */
+    width: 75%;
 }
 
 .track-input {
     border: none;
     border-bottom: 1px solid skyblue;
     background-color: transparent;
+    flex-grow: 1;
+    height: 50px;
+    font-size: 35px;
 }
 
 .track-input:focus {
-    border: none;
-} 
+    outline: none;
+    background-color: rgba(173, 216, 230, 0.1);
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.track-btn {
+    border: 1px solid skyblue;
+    border-radius: 5px;
+    /* border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px; */
+    background-color: rgba(173, 216, 230, 0.5);
+    flex-grow: 0.5;
+    outline: none;
+}
+
+.track-btn:hover {
+    background-color: rgba(173, 216, 230, 0.7);
+    outline: none;
+}
+
+.track-btn:focus {
+    outline: 1px solid black;
+}
