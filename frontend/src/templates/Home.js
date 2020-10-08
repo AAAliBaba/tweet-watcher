@@ -22,6 +22,33 @@ function Home(props) {
         "Sat Oct 03 00:04:31 +0000 2020"
     )
 
+    const [words, setWords] = useState([]);
+    const [input, setInput] = useState("");
+    let displayWords = [];
+
+    useEffect(() => {
+        console.log(words);
+        //logic that updates the word list will go here
+        displayWords = words.map((word) => {
+            return (
+            <div className="word">
+                {word}
+                <button className="remove-btn">x</button>
+            </div>)
+        });
+    }, [words])
+
+    let updateWords = async (word) => {
+        let newArr = [...words];
+        newArr.push(word);
+        setWords(newArr);
+    }
+
+    let onTrackClicked = () => {
+        setInput(""); //clear input
+        updateWords(input);
+    }
+
     return (
         <div>
             <div className="header">
@@ -35,8 +62,17 @@ function Home(props) {
                         <h2 className="title">Keywords</h2>
                         <p className="title">Type keywords (separated by a space) that you want to track!</p>
                         <div className="form">
-                            <input className="track-input" type="text"></input>
-                            <button className="track-btn">Track</button>
+                            <input className="track-input" type="text" value={input} onChange={event => setInput(event.target.value)}></input>
+                            <button className="track-btn" onClick={onTrackClicked}>Track</button>
+                        </div>
+
+                        <div className="tracked-words">
+                            {words.map((word) => {
+                                return (<div className="word">
+                                {word}
+                                <button className="remove-btn">x</button>
+                            </div>)
+                            })}
                         </div>
                     </div>
                     {/* <button onClick={() => {socket.emit('quicktest', "hello from client")}}>Test Socket</button> */}

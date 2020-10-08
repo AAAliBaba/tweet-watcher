@@ -106,6 +106,44 @@
     outline: none;
 }
 
-.track-btn:focus {
+/* .track-btn:focus {
     outline: 1px solid black;
+} */
+
+.tracked-words {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    /* grid-template-rows: repeat(9, 40px); */
+    /* grid-auto-flow: row; */
+    /* justify-content: center; */
+    /* align-self: center; */
+    align-self: center;
+    /* background-color: springgreen; */
+    align-items: center;
+    justify-items: center;
+    width: 80%;
+}
+
+.word {
+    display: flex;
+    background-color: skyblue;
+    border-radius: 50px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.remove-btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin: 2px;
+    margin-left: 5px;
+    justify-self: center;
+    font-size: 15px;
+}
+
+.remove-btn:hover {
+    color: white;
 }
