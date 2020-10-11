@@ -10,14 +10,14 @@ function App() {
 
   const [tweet_arr, setTweetArr] = useState([]);
 
-  // const socket = socketIOClient(ENDPOINT);
-  // socket.on('quicktest', (arg) => {
-  //     let tm = new TweetModel(arg);
-  //     console.log(tm)
-  //     let new_arr = [...tweet_arr];
-  //     new_arr.push(tm);
-  //     setTweetArr(new_arr)
-  // });
+  const socket = socketIOClient(ENDPOINT);
+  socket.on('received-tweet', (arg) => {
+      let tm = new TweetModel(arg);
+      console.log(tm)
+      let new_arr = [...tweet_arr];
+      new_arr.push(tm);
+      setTweetArr(new_arr)
+  });
 
   return (
     <div>

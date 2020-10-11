@@ -22,18 +22,25 @@ var tweet_stream = new Twitter({
 io.on('connection', socket => {
   console.log('User connected')
   
-  /*
-    code here that changes what to track and untrack
-  */
-  tweet_stream.track('aaalibabatest')
-  tweet_stream.on('tweet', tweet => {
-    socket.emit('quicktest', tweet)
+  //track tweet
+  socket.on('track-tweet', res => {
+    tweet_stream.track(res)
   })
 
-  socket.on('quicktest', (res) => {
-    console.log(res)
-    io.sockets.emit('quicktest', "hello from server")
+  //untrack tweet
+  socket.on('untrack-tweet', res => {
+    tweet_stream.untrack(res)
   })
+
+  //send client tweet when it gets registered in the tweet stream
+  tweet_stream.on('tweet', tweet => {
+    socket.emit('received-tweet', tweet)
+  })
+
+  // socket.on('quicktest', (res) => {
+  //   console.log(res)
+  //   io.sockets.emit('quicktest', "hello from server")
+  // })
 
   socket.on('disconnect', () => {
     console.log('User disconnected...')
