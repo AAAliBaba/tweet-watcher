@@ -3,18 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import socketIOClient from 'socket.io-client';
+import SocketService from './services/SocketService';
 
-import Home from './templates/Home';
-import TweetModel from './models/TweetModel';
-import SocketService from './SocketService';
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
 const socketService = new SocketService()
 
 ReactDOM.render(<App socketService={socketService}/>, document.getElementById('root'));

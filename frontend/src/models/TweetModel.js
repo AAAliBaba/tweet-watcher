@@ -1,5 +1,6 @@
 class TweetModel {
     constructor(obj) {
+        this.id = obj['id']
         this.imgUrl = obj['user']['profile_image_url']
         this.username = obj['user']['name']
         this.usertag = obj['user']['screen_name']

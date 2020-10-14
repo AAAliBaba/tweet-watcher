@@ -29,12 +29,10 @@ img {
 }
 
 .tweet-message {
-    /* background-color: maroon; */
     margin-bottom: 10px;
 }
 
 .tweet-datetime {
-    /* background-color: mediumvioletred; */
     color: lightgray;
     margin-bottom: 5px;
     margin-right: 5px;

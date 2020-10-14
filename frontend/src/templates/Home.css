@@ -18,7 +18,6 @@
 
 .main-content {
     display: flex;
-    /* background-color: springgreen; */
     padding: 12px;
     justify-content: center;
     align-items: center;
@@ -41,26 +40,11 @@
     height: 65vh;
 }
 
-/* .results {
-    display: flex;
-    justify-content: center;
-    border-radius: 10px;
-    margin: 50px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    height: 80vh;
-    width: 50vw;
-} */
-
-.tweet {
-    /* background-color: springgreen; */
-}
-
 .list {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     overflow: auto;
-    /* background-color: springgreen; */
 }
 
 .title {
@@ -71,7 +55,6 @@
 .form {
     display: flex;
     align-self: center;
-    /* background-color: springgreen; */
     width: 75%;
 }
 
@@ -95,8 +78,6 @@
 .track-btn {
     border: 1px solid skyblue;
     border-radius: 5px;
-    /* border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px; */
     background-color: rgba(173, 216, 230, 0.5);
     flex-grow: 0.5;
     outline: none;
@@ -107,20 +88,11 @@
     outline: none;
 }
 
-/* .track-btn:focus {
-    outline: 1px solid black;
-} */
-
 .tracked-words {
     margin-top: 25px;
     display: grid;
     grid-template-columns: repeat(4, auto);
-    /* grid-template-rows: repeat(9, 40px); */
-    /* grid-auto-flow: row; */
-    /* justify-content: center; */
-    /* align-self: center; */
     align-self: center;
-    /* background-color: springgreen; */
     align-items: center;
     justify-items: center;
     width: 80%;

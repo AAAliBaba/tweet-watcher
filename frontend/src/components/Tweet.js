@@ -4,7 +4,6 @@ import './Tweet.css'
 
 function Tweet(props) {
     //pre: props is a tweet model
-    // console.log(props)
     return (
         <div className="tweet-root">
             <div>

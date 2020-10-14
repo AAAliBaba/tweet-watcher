@@ -12,14 +12,14 @@ const server = http.createServer(app)
 
 const io = socketIO(server)
 
-var tweet_stream = new Twitter({
+const tweet_stream = new Twitter({
   consumer_key: process.env.API_KEY,
   consumer_secret: process.env.API_SECRET,
   token: process.env.TOKEN,
   token_secret: process.env.TOKEN_SECRET
 })
 
-var all_tweets = []
+const all_tweets = []
 
 io.on('connection', socket => {
   console.log('User connected')
@@ -34,8 +34,6 @@ io.on('connection', socket => {
     tweet_stream.untrack(res)
   })
 
-  // tweet_stream.track('aaalibabatest');
-
   //send client tweet when it gets registered in the tweet stream
   tweet_stream.on('tweet', tweet => {
     all_tweets.push(tweet)
@@ -43,12 +41,7 @@ io.on('connection', socket => {
 
   setInterval(() => {
     socket.emit('received-tweet', all_tweets.shift())
-  }, 2000)
-
-  // socket.on('quicktest', (res) => {
-  //   console.log(res)
-  //   io.sockets.emit('quicktest', "hello from server")
-  // })
+  }, 1000)
 
   socket.on('disconnect', () => {
     console.log('User disconnected...')
