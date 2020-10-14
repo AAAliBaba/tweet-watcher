@@ -21,23 +21,12 @@ function Home(props) {
     //     "this is another test tweet message",
     //     "Sat Oct 03 00:04:31 +0000 2020"
     // )
-    const ENDPOINT = 'localhost:9000';
-    const socket = socketIOClient(ENDPOINT);
-
     const [words, setWords] = useState([]);
     const [input, setInput] = useState("");
     // let displayWords = [];
 
     useEffect(() => {
         console.log(words);
-        //logic that updates the word list will go here
-        // displayWords = words.map((word) => {
-        //     return (
-        //     <div className="word">
-        //         {word}
-        //         <button className="remove-btn">x</button>
-        //     </div>)
-        // });
     }, [words])
 
     let updateWords = (input) => {
@@ -46,7 +35,7 @@ function Home(props) {
         for(let i = 0; i < wordArr.length; i++)
         {
             newArr.push(wordArr[i]);
-            socket.emit('track-tweet', wordArr[i]);
+            props.socketService.SOCKET.emit('track-tweet', wordArr[i]);
         }
         setWords(newArr);
     }
