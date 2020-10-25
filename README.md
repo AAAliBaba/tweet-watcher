@@ -3,7 +3,6 @@
 A React web-application that utilizes `node-tweet-stream` and `socket.io` to display a real-time feed of Tweets that contain user-inputted keywords!
 
 ![](tweet-watcher-gif.gif)
-[tweet-watcher-gif]
 
 ## How to run
 
