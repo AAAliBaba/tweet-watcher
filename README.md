@@ -6,15 +6,19 @@ A React web-application that utilizes `node-tweet-stream` and `socket.io` to dis
 
 ## How to run
 
+### Setup:
+
 <strong>In order to use Twitter's API services, you must obtain authorization keys.</strong> <br/>
 This is done by creating a <a href="https://developer.twitter.com/en/apply-for-access">Twitter Developer Account</a>.
 
-You must also have installed `socket.io`: `npm install socket.io` <br/>
-And `socket.io-client`: `npm install socket.io-client`
+You must have installed the following npm packages:
 
-Finally, install `node-tweet-stream`: `npm install node-tweet-stream` <br/>
+- `npm install socket.io` // socket.io server
+- `npm install socket.io-client` // socket.io client
+- `npm install node-tweet-stream` // allows us to utilize Twitter's real-time filtered stream
+- `npm install dotenv` // allows us to use environment variables
 
-Then, follow the steps:
+### Procedure:
 
 - While in `tweet-watcher/backend/`, run `touch .env`
 - Edit `.env` as such:
