@@ -1,3 +1,7 @@
+# Tweet Watcher
+
+A React web-application that utilizes `node-tweet-stream` and `socket.io` to display a real-time feed of Tweets that contain user-inputted keywords!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
